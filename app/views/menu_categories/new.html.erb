@@ -1,0 +1,32 @@
+<h1>Menu Catgeory</h1>
+<%= form_for(@menu_category) do |form| %>
+  <% if @menu_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu_category.errors.count, "error") %> </h2>
+
+      <ul>
+        <% @menu_category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <label>Category Name</label>
+       <%= form.text_field :cat_name, class:'form-control' ,placeholder:'Category Name'%>
+      <br /> <br />
+
+      <label>Parent Category</label>
+      <div class="field">
+   
+     <%= select_tag 'cat_id', options_for_select(MenuCategory.all.collect{ |u| [u.cat_name, u.id] }), {:class=>'form-control', :prompt => 'Select Category'}  %>
+    </div>
+
+      <br /> <br />
+
+      <label>Sort Order</label>
+       <%= form.text_field :sort_order,class:'form-control' ,placeholder:'Sort Order'%>
+      <br /> <br />
+
+      <input type="submit" value="Add Category" />
+<% end %>
