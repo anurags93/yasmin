@@ -1,0 +1,73 @@
+   <div class="pages-hero" style="background-image:url(<%= asset_path 'backaboutimg.png' %>);">
+     
+    <div class="container">
+            <div class="pages-title">
+                <h1>My Profile</h1>
+              
+            </div>
+        </div>  
+    </div>
+    <!--SLIDER END-->
+
+<section style="padding-top:50px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<%= render 'home/sidebar'%>
+			</div>
+			<div class="col-lg-9 mainCountOuter">
+				<div class="outerMenuSec activeLargeSec" id="structid_1">
+					<h3>My Profile</h3> <!--heading--->
+					<hr>
+			
+				
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group">
+<label class="control-label">Name <span class="required">*</span></label>
+<input class="form-control border-form-control" id="txt_name_p" placeholder="Enter Name" type="text" value="<%=current_user.name %>">
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group">
+<label class="control-label">Phone <span class="required">*</span></label>
+<input class="form-control border-form-control" id="txt_phone_p"  placeholder="Mobile No" type="number" value="<%=current_user.contact %>">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group">
+<label class="control-label">Email Address <span class="required">*</span></label>
+<input class="form-control border-form-control " id="txt_email_p"  placeholder="Email Address" disabled="" type="email" value="<%=current_user.email %>">
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="col-sm-12 text-right"><br>
+<button type="button" class="btn btn-outline-danger"> Cancel </button>
+<button type="button" class="btn btn-primary btnProfileSubmit"> Save Changes </button>
+<div class="msg" style="color:green;font-weight:bold;"></div><br>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12"><label class="control-label">Delivery Address *</label></div>
+
+<%= render 'home/address', radiobtn: false %>
+</div>
+			</div>
+				
+			</div>
+		</div>
+	</div><br>
+<section>
+ 
+
+
+    <!-- CONTENT END -->
+
+
+
+
+

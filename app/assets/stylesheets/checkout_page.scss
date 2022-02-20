@@ -1,0 +1,238 @@
+
+.otSecDiv{
+	//box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px -3px rgb(0 0 0 / 14%), 0px 3px 10px -3px rgb(0 0 0 / 12%);
+	background:#F3F7F8; border-radius:4px; padding-top: 15px;
+    padding-bottom: 15px; border:1px solid #ccc;
+}
+
+.otSecDiv h4{
+	background: #333;
+    color: #fff;
+    padding: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: system-ui; margin-bottom:0px; 
+}
+.addLayout{
+	border: 1px solid #ccc;
+    border-radius: 4px; background:#fff;
+    padding: 10px;
+    font-family: system-ui; text-align:center;
+}
+.addType{
+	    margin-bottom: 6px;
+}
+.addType span{
+	background: #333;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 13px;
+}
+.fullAdd{
+	color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 7px;
+}
+.zipPin{
+	color:#333;
+}
+.edBtn{
+	margin-top: 15px;
+	
+}
+
+
+.addNewAddCls a{
+	
+}
+
+.addNewAddCls{
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px; cursor:pointer;
+    font-family: system-ui; font-weight:600;
+    /* line-height: 53px; */
+    background: #fff;
+}
+.addNewAddCls h4{
+	    line-height: 135px;
+    text-align: center;
+}
+
+.outerMenuSec{
+	font-weight:600;
+}
+
+.profileActive{
+	border-right: 3px solid rgb(237, 90, 107);
+    background: linear-gradient(
+90deg
+, rgb(255, 255, 255), rgb(247, 235, 236));
+}
+.selectBtn{
+	margin-top:15px;
+}
+.selectBtn a{
+	background: #ccc;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    color: #000;
+}
+
+.topHeadSec{
+	    background: #333;
+    color: #fff;
+    font-weight: 600;
+    font-family: system-ui;
+    font-size: 17px;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.addLayout p{
+		
+	}
+	
+	.addLayout h5{
+		
+	}
+	.payOnl{
+		background: #FF404C;
+    color: #fff !important;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 4px;
+    text-decoration: none;
+	}	
+	.payOnl1{
+		background: #bbb;
+    color: #888 !important;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 4px;
+    text-decoration: none;
+	}	
+    .pimgsec{
+    float:left; margin-right:10px; width:30%;
+}
+
+.pimgsec img{
+    width:100%; border-radius:8px;
+}
+
+.RemoveCart{
+    float:right;
+}
+
+.RemoveCart a{
+   
+    color: #fff !important; text-decoration:none;
+    padding: 4px;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 10px;
+    font-family: system-ui;
+    font-size: 14px;
+}
+
+
+.mdSec{
+    float:left; width:100%;
+}
+.mainmSec{
+    //background: #F1F3F4;
+    padding: 4px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    
+}
+.mdSec h6{
+    font-weight:500; margin-bottom:10px;     font-size: 15px;
+}
+
+.mdSec p{
+    margin-bottom:5px;
+}
+
+.txtQty{
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    width: 50px;
+    height: 26px;
+    padding: 3px;
+    margin-right: 5px;
+}
+
+.totalAmntSec{
+            float: right;   
+margin-top: 15px;
+    margin-bottom: 15px;            
+}
+.totalAmntSec h5{
+    font-size:18px;
+}
+.cnShopSec{
+    margin-bottom: 30px;
+}
+.cnShopSec ul {
+        margin: 0px;
+    padding: 0px;
+}
+.cnShopSec ul li{
+    list-style: none;
+    width: 50%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    background: #333;
+    
+}
+.cnShopSec ul li a{
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.rmvBtn{
+    font-family: system-ui;
+    color: #000;
+    text-decoration: underline;
+    float: right;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.summrySec{
+        //box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px -3px rgb(0 0 0 / 14%), 0px 3px 10px -3px rgb(0 0 0 / 12%);
+    background: #F3F7F8;
+    padding: 8px; border:1px solid #ccc; border-radius:4px;
+}
+
+#cpn_loader
+     {
+         visibility:hidden;
+     }
+
+     .modalFrmBody{
+    font-weight: 600;
+    font-family: system-ui;
+    color: #000;
+}
+.modalFrmBody label{
+        margin-bottom:5px;
+}
+
+.mbTxt{
+    margin-bottom:15px;
+}

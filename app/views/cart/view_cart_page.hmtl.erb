@@ -1,0 +1,53 @@
+ <!--SLIDER START-->
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>View Cart</h1>
+                <p>Home / View Cart</p>
+            </div>
+        </div>  
+    </div>
+    <!--SLIDER END-->
+
+
+<section style="padding-top:50px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<div id="cart_section">
+				<%= render 'cart/cart'%>
+			    </div>
+				<div class="totalAmntSec">
+					<h5>Total Amount : £ <%= @item_total %></h5>
+				</div>
+				<div style="clear:both;"></div>
+				<div class="cnShopSec">
+					<ul>
+						<li style="background:#46C756; border-right:5px solid #fff;">
+							
+						<%= link_to 'Order More Item / Back' ,home_menu_path %>
+
+						</li>
+						<% if @cart_data.empty? %>
+	                    <li style="background:#CCC;">
+						<a href="javascript:void(0);">Proceed to Checkout</a>
+						</li>
+						
+						<% else %>
+						<li style="background:#FF404C;">
+						<%= link_to 'Proceed to Checkout' ,home_checkout_path %>
+
+						</li>
+						<% end %>
+						<div style="clear:both;"></div>
+					</ul>
+				</div>
+				
+			</div>
+			<div class="col-lg-2"></div>
+		</div>
+	</div>	
+<section>
+ 
+

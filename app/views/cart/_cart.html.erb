@@ -1,0 +1,28 @@
+<% @item_total=0 %>
+				<%   @cart_data.each do |item_id,item_qty|
+					      @item_obj=@distinct_menu.find(item_id.to_i)
+					      @item_total=@item_total+(@item_obj.price)*item_qty
+					     %>
+				<div class="viewCartSec" id="cart_<%= item_id %>">
+					
+					<div class="mainmSec">
+					<div class="mdSec">
+							<h6><%= @item_obj.name %></h6>
+							<p>
+								<input disabled type="number" value="<%= item_qty %>" class="txtQty"> Amount : £ <%= @item_obj.price %>
+								
+								<hr>
+								Total : £ <%= @item_obj.price*item_qty %>
+								
+								
+							
+							</p>
+						</div>
+						
+						<div class="RemoveCart">
+							<%= link_to '<i class="fa fa-trash-o" style="font-size:28px;color:red"></i>'.html_safe, cart_path(@item_obj.id),remote: true,method: 'delete', data: { confirm: "Are you sure?" } %>
+							</div>
+						<div style="clear:both;"></div>
+					</div>
+				</div><br>
+				<% end %>

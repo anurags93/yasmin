@@ -1,32 +1,13 @@
-<h1>Menu Catgeory</h1>
-<%= form_for(@menu_category) do |form| %>
-  <% if @menu_category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@menu_category.errors.count, "error") %> </h2>
 
-      <ul>
-        <% @menu_category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="container-fluid">
+   <h3>Add Menu Catgeory</h3><br>
+  <div class="row">
+ 
+  <div class="col-lg-4">
+<%= render 'form', menu_category: @menu_category %>
 
-      <label>Category Name</label>
-       <%= form.text_field :cat_name, class:'form-control' ,placeholder:'Category Name'%>
-      <br /> <br />
-
-      <label>Parent Category</label>
-      <div class="field">
-   
-     <%= select_tag 'cat_id', options_for_select(MenuCategory.all.collect{ |u| [u.cat_name, u.id] }), {:class=>'form-control', :prompt => 'Select Category'}  %>
-    </div>
-
-      <br /> <br />
-
-      <label>Sort Order</label>
-       <%= form.text_field :sort_order,class:'form-control' ,placeholder:'Sort Order'%>
-      <br /> <br />
-
-      <input type="submit" value="Add Category" />
-<% end %>
+<%= link_to "Back To Dashboard", dashboard_index_path  ,class:'links' %>
+&nbsp;&nbsp;<%= link_to "Show All Category", menu_categories_path  ,class:'links'%>
+</div>
+</div>
+</div>

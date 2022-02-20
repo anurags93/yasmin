@@ -1,0 +1,86 @@
+ <% if @user_addresses.count == 0 %>
+ <% else %>
+   <% @user_addresses.each do |address|%>
+<div class="col-sm-4" style="margin-bottom:15px;">
+
+	<div class="addLayout">
+	 <% if address.address_type == 'home' %>
+		<div class="addType"><span style="background:#333;">Home</span></div>
+	<% elsif address.address_type == 'work' %>
+		<div class="addType"><span style="background:#333;">Work</span></div>
+	<% else %>
+		<div class="addType"><span style="background:#333;">Other</span></div>
+	<% end %>
+	<% if radiobtn %>
+<%= radio_button_tag 'order_address', address.id %>
+  <% end %>
+		<div class="fullAdd"><%= address.address %></div>
+		<div class="zipPin">Passcode : <%= address.pincode %></div>
+		<div class="edBtn"><!--<a href="javascript:void(0);" class="editBtnCls">Edit</a>-->
+			<%= link_to 'Delete' ,user_address_path(address.id),data: {:confirm => 'Are you sure?'}, :method => :delete ,class:'deleteBtnCls' %></div>
+	</div>
+
+</div>
+     <% end %>
+<% end %>
+<div class="col-sm-4">
+
+	<div class="addNewAddCls">
+		<a href="javascript:void(0);">
+			<h4>Add New Address</h4>
+		</a>
+	</div>
+
+</div>
+
+
+
+<!--popup--->
+<div id="myModal" class="modal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title">Add Delivery Address</h4>
+      </div>
+      <div class="modal-body modalFrmBody">
+        
+<div class="form-row">
+<div class="form-group col-md-12">
+<label class="control-label">Passcode<span class="required">*</span></label>
+<input id="address_zip" class="form-control border-form-control" value="" placeholder="123456" type="text">
+</div>
+<div class="form-group col-md-12">
+<label for="inputPassword4">Complete Address
+</label>
+<input id="address_address" type="text" class="form-control" placeholder="Complete Address e.g. house number, street name, landmark">
+</div>
+<div class="form-group mb-0 col-md-12">
+<label for="inputPassword4">Nickname
+</label>
+<div class="btn-group btn-group-toggle d-flex justify-content-center" data-toggle="buttons">
+<label class="btn btn-info active">
+<input type="radio" name="address_options" value="home" id="option1" autocomplete="off" checked> Home
+</label>
+<label class="btn btn-info">
+<input type="radio" name="address_options" value="work" id="option2" autocomplete="off"> Work
+</label>
+<label class="btn btn-info">
+<input type="radio" name="address_options" value="other" id="option3" autocomplete="off"> Other
+</label>
+</div>
+</div>
+</div>
+
+      </div>
+     <div class="modal-footer">
+<button type="button" class="btn d-flex text-center justify-content-center btn-outline-primary" data-dismiss="modal">CANCEL
+</button><button type="button" class="address_btn btn d-flex  text-center justify-content-center btn-primary">SUBMIT</button>
+</div>
+    </div>
+
+  </div>
+</div>
+<!--popup---> 

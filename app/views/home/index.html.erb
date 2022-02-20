@@ -1,3 +1,205 @@
-<div align="center">
-<h1><%= link_to "Go To Dashboard", dashboard_index_path %></h1>
+     <!--SLIDER START-->
+        <div class="home-slider">
+            <!-- partial:index.partial.html -->
+            <div class="hero-slider" data-carousel>
+                <div class="carousel-cell" style="background-image:url(<%= asset_path 'sliderimg1.jpg' %>)">
+                   <div class="overlay"></div>
+                    <div class="container slider-caption">
+                        <h5 class="subtitle">Affordable prices to anyone</h5>
+                        <h2 class="title">Choose and taste  <br>to your place</h2>
+                        <div class="slider-btn">
+                            <a href="javascript:void(0);" class="btn-default">Reserve now</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-cell" style="background-image:url(<%= asset_path 'sliderimg2.jpg' %>);">
+                  <div class="overlay"></div>
+                    <div class="container slider-caption">
+                        <h5 class="subtitle">Expect the best</h5>
+                        <h2 class="title">Where the flavor  <br/> inebriates you</h2>
+                        <div class="slider-btn">
+                            <a href="javascript:void(0);" class="btn-default">Reserve now</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-cell" style="background-image:url(<%= asset_path 'sliderimg3.jpg' %>);">
+                   <div class="overlay"></div>
+                    <div class="container slider-caption">
+                        <h5 class="subtitle">Renew your look</h5>
+                        <h2 class="title">The artisans <br>of the indian cuisine</h2>
+                        <div class="slider-btn">
+                            <a href="javascript:void(0);" class="btn-default">Reserve now</a>
+                            
+                        </div>
+                    </div>
+                </div>
+				
+				
+            </div>
+            <!-- partial -->
+        </div>
+        <!--SLIDER END-->
+    </header>
+
+	
+
+
+<!--start-->
+
+<section class="otSec">
+	<div class="container">
+		<div class="row">
+		
+
+			<div class="col-lg-4">
+				<div class="frontSec">
+					<img src="<%= asset_path 'lunch.png' %>">
+					<h4>Lunch</h4>
+					<p>12:00 pm - 2:30 pm</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+					<div class="frontSec middleFSec" style="">
+						<img src="<%= asset_path 'dinner.png' %>">
+						<h4>Dinner</h4>
+						<p>6:00 pm - 11:00 pm</p>
+					</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="frontSec">
+						<img src="<%= asset_path 'buffet.png' %>">
+						<h4>Sunday Buffet</h4>
+						<p>12:00 pm - 3:00 pm</p>
+					</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--end-->
+
+	  <%= render 'home/about' %>
+	
+       
+
+        <!--- MENU START -->
+		
+
+
+<section style="background:#121619;  background-repeat: round;">
+<div class="chef-top-bg"><%= image_tag("chef-top-bg.png") %></div>
+        <div class="container">
+            <div class="center-title"><br>
+                <h2 style="color:#fff;">Our Menu</h2>
+                <p>Choose & Taste</p>
+            </div>
+            <div class="row">
+
+
+
+			
+<!--new-->
+
+<div class="col-lg-4">
+	<div class="mad-col">
+	  <div class="mad-menu-card">
+		<div class="mad-menu-border"></div>
+		<a href="javascript:void(0);" class="mad-card-img with-overlay">
+			<%= image_tag ("starter_menu.jpg") %>
+		</a>
+		<div class="mad-card-text">
+		  <h4>Starters</h4>
+		  <a href="javascript:void(0);" class="mad-read-more">View Menu </a>
+		</div>
+	  </div>
+	</div>
 </div>
+
+
+<div class="col-lg-4">
+	<div class="mad-col">
+	  <div class="mad-menu-card">
+		<div class="mad-menu-border"></div>
+		<a href="javascript:void(0);" class="mad-card-img with-overlay">
+			<%= image_tag ("main_course_menu.jpg") %>
+            </a>
+		<div class="mad-card-text">
+		  <h4>Main Courses</h4>
+		  <a href="javascript:void(0);" class="mad-read-more">View Menu </a>
+		</div>
+	  </div>
+	</div>
+</div>
+
+
+<div class="col-lg-4">
+	<div class="mad-col">
+	  <div class="mad-menu-card">
+		<div class="mad-menu-border"></div>
+		<a href="javascript:void(0);" class="mad-card-img with-overlay">
+			<%= image_tag ("vegetarin_menu.jpg") %>
+			</a>
+		<div class="mad-card-text">
+		  <h4>Vegetarian</h4>
+		  <a href="javascript:void(0);" class="mad-read-more">View Menu </a>
+		</div>
+	  </div>
+	</div>
+</div>
+
+
+<div class="col-lg-4">
+	<div class="mad-col">
+	  <div class="mad-menu-card">
+		<div class="mad-menu-border"></div>
+		<a href="javascript:void(0);" class="mad-card-img with-overlay">
+			<%= image_tag ("house_sp_menu.jpg") %>
+          </a>
+		<div class="mad-card-text">
+		  <h4>House Specials</h4>
+		  <a href="javascript:void(0);" class="mad-read-more">View Menu </a>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<div class="col-lg-4">
+	<div class="mad-col">
+	  <div class="mad-menu-card">
+		<div class="mad-menu-border"></div>
+		<a href="javascript:void(0);" class="mad-card-img with-overlay">
+			<%= image_tag ("biryani_and_rice.jpg") %>
+		</a>
+		<div class="mad-card-text">
+		  <h4>Biryani's & Rice</h4>
+		  <a href="javascript:void(0);" class="mad-read-more">View Menu </a>
+		</div>
+	  </div>
+	</div>
+</div>
+
+
+
+
+
+<!--new-->
+			
+			
+			
+       <div class="col-lg-12" align="center"><br>
+		<div class="viewMoreBtn">
+			<a href="">View More >></a>
+		</div><br><br>
+	   </div>	   
+  
+            </div>
+        </div>
+		
+		<div class="chef-bottom-bg"><%= image_tag("bottomchefbg.png") %></div>
+					
+	</section>		
+	
+	
+        <!--- MENU END -->
+   

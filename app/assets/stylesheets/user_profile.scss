@@ -1,0 +1,94 @@
+.addLayout{
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: system-ui;
+}
+.addType{
+	    margin-bottom: 6px;
+}
+.addType span{
+	background: #333;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 13px;
+}
+.fullAdd{
+	color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 7px;
+}
+.zipPin{
+	color:#333;
+}
+.edBtn{
+	margin-top: 15px;
+	
+}
+.editBtnCls{
+	background:#46C756; color:#fff !important; text-decoration:none; padding:4px;  padding-left:10px; padding-right:10px;
+	border-radius:4px; margin-right:8px; 
+    font-size: 14px;
+
+}
+.deleteBtnCls{
+	background:#FF404C; color:#fff !important; text-decoration:none; padding:4px;  padding-left:10px; padding-right:10px;
+	border-radius:4px; 
+    font-size: 14px;
+
+}
+
+.addNewAddCls a{
+	
+}
+
+.addNewAddCls{
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px; cursor:pointer;
+    font-family: system-ui; font-weight:600;
+    /* line-height: 53px; */
+    background: #F1F3F4;
+}
+.addNewAddCls h4{
+	    line-height: 110px;
+    text-align: center;
+}
+
+.outerMenuSec{
+	font-weight:600;
+}
+
+.profileActive{
+	border-right: 3px solid rgb(237, 90, 107) !important;
+    background: linear-gradient(
+90deg
+, rgb(255, 255, 255), rgb(247, 235, 236)) !important;
+}
+
+
+.p_err_cls{
+        border:1px solid red;
+    }
+
+
+
+
+    .modalFrmBody{
+    font-weight: 600;
+    font-family: system-ui;
+    color: #000;
+    background-color:#f7f7f7 !important;
+}
+.modalFrmBody label{
+        margin-bottom:5px;
+}
+
+.mbTxt{
+    margin-bottom:15px;
+}

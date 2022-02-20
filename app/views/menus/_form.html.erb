@@ -1,0 +1,54 @@
+<%= form_for @menu  do |form| %>
+
+   <% if @menu.errors.any? %>
+  <div class="alert alert-danger alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <div id="error_explanation">
+     
+   <h5><%= pluralize(@menu.errors.count, "error") %> : 
+        <% @menu.errors.full_messages.each do |error| %>
+          <%= error %>
+          <br>
+        <% end %>
+      </h5>
+    </div>
+</div>
+   
+  <% end %>
+
+      <label>Menu Item </label>
+
+       <%= form.text_field :name, class:'form-control' ,placeholder:'Menu Item'%>
+      <br /> <br />
+
+      <label> Menu Category</label>
+
+   
+     <%= form.collection_select :menu_category_id, @menu.category_list ,:id, :name, include_blank: "Select Category" , class:'form-control' %>
+    
+      <br /> <br />
+   <label>Menu Choice</label>
+   
+     <%= form.select :menu_choice, options_for_select([['Select Choice',0], ['Single Choice',1], ['Multiple Choice',2]] , selected: @menu.menu_choice || @menu.menu_choice) %>
+
+      <br /> <br />
+       <label>Stock </label>
+    
+      <%= form.text_field :stock, class:'form-control' ,placeholder:'Stock'%>
+   
+      <br /> <br />
+      <label>Price</label>
+    
+      <%= form.text_field :price, class:'form-control' ,placeholder:'Price'%>
+   
+      <br /> <br />
+
+      <label>Sort Order</label>
+       <%= form.text_field :sort_order,class:'form-control' ,placeholder:'Sort Order'%>
+      <br /> <br />
+
+     <%= form.submit class:'btn btn-info' ,value:'Submit'%>
+<% end %>
+<br>
+
+

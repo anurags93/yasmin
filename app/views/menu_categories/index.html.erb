@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<div class="row">
+	
+	<div class="col-lg-6">
+<h3>List Of Menu Categories</h3><br>
+<table class="table table-striped">
+<th>S.No</th>
+<th>Category Name</th>
+<th>Parent Category</th>
+<th>Tax </th>
+<th colspan="2">Actions</th>
+<% count=1 %>
+<% @menu_category.each_with_index  do |menu,i|  %>
+<tr>
+<td><%= count + i%></td>
+<td><%= menu.name%></td>
+<td><%= menu.parent.present? ? menu.parent.name : 'No Data'%></td>
+<td><%= menu.tax_id.present? ? Tax.find(menu.tax_id).gst : 'No Data'%></td>
+
+<td><%= link_to 'Edit', edit_menu_category_path(menu) ,class:'action_link' %>&nbsp;&nbsp;</td>
+<td><%= link_to 'Destroy', menu_category_path(menu), method: :delete, data: { confirm: 'Are you sure?' } ,class:'action_link'%></td>
+
+</tr>
+<%end%>
+</table><br>
+<%= link_to "Back To Dashboard", dashboard_index_path ,class:'links' %>
+&nbsp;&nbsp;<%= link_to "Add More Category", new_menu_category_path ,class:'links' %>
+</div>
+</div>
+</div>

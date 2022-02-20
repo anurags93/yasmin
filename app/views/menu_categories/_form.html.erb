@@ -1,0 +1,45 @@
+<%= form_for @menu_category  do |form| %>
+
+  <% if @menu_category.errors.any? %>
+  <div class="alert alert-danger alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <div id="error_explanation">
+     
+   <h5><%= pluralize(@menu_category.errors.count, "error") %> : 
+        <% @menu_category.errors.full_messages.each do |error| %>
+          <%= error %>
+          <br>
+        <% end %>
+      </h5>
+    </div>
+</div>
+   
+  <% end %>
+
+      <label>Category Name</label>
+
+       <%= form.text_field :name, class:'form-control' ,placeholder:'Category Name'%>
+      <br /> 
+
+      <label>Parent Category</label>
+    
+     <%= form.collection_select :parent_id, MenuCategory.all,:id, :name, include_blank: "Select Parent" %>
+    
+   
+      <br /> <br />
+      <label>Tax For Category </label>
+    
+     <%= form.collection_select :tax_id, Tax.all,:id, :gst, include_blank: "Select Tax" %>
+    
+   
+      <br /><br>
+
+      <label>Sort Order</label>
+       <%= form.text_field :sort_order,class:'form-control' ,placeholder:'Sort Order'%>
+      <br /> <br />
+
+     <%= form.submit class:'btn btn-info' ,value:'Submit'%>
+<% end %>
+<br>
+
+

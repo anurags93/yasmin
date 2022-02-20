@@ -1,0 +1,31 @@
+
+
+
+<div class="mSideBar_user">
+				<div class="ProfileSection">
+					<div class="pNameSec"><h4><%= current_user.name %></h4></div>
+					<div style="clear:both;"></div>
+				</div>
+				
+				
+					<ul>
+					
+						<li class="menuClsName profileActive">
+							<%=  link_to "My Profile", home_user_profile_path  %>
+						</li>
+						
+						<li  class="menuClsName ordrHisActive">
+							<a href="Orders">Order History</a>
+						</li>
+						<li  class="menuClsName ordrHisActive">
+						<%= link_to 'My Cart' ,home_view_cart_page_path %>
+
+						</li>
+						<li  class="menuClsName">
+							
+							<%= link_to 'Sign Out' ,destroy_user_session_path,method: :delete %>
+						</li>
+						
+					</ul>
+					<br><br>
+				</div>

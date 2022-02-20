@@ -1,0 +1,108 @@
+<!-- PRELOADER START -->
+    <!--<div id="loader-wrapper">
+        <div class="loader">
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+        </div> 
+    </div>--->
+    <!-- PRELOADER END -->
+
+    
+    <header>
+        <!-- TOP HEADER START -->
+        <div class="top-header-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="top-contact text-left">
+                            <li class="phone"><span class="tel-no">
+								<a href="tel:(01483) 282282"> (01483) 282282</a>, 
+								<a href="tel:(01483) 283283"> (01483) 283283</a>
+								</span></li>
+                            <!--<li class="email"><a href="mailto:info@jalao.com">info@companyname.com</a></li>-->
+                        </ul>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <div class="top-social">
+                            <ul class="social-list">
+                                <li><a href="https://www.facebook.com/yasminrestauranteasthorsley/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com/yasminresex" target="_blank"><i class="fab fa-twitter"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-google-plus"></i></a></li>
+								<li><a href="#" target="_blank"><i class="fab fa-behance"></i></a></li>                                
+                                <!--<li><a href="#"><i class="fab fa-instagram"></i></a></li>-->
+								<% if user_signed_in? %>
+			<li>
+				 <%= link_to 'Sign Out' ,destroy_user_session_path,method: :delete,class:'quote-btn' %>	
+			</li>			
+	<% else %>
+			  <li class="nav-item">
+            <%= link_to 'Sign Up' ,registration_register_path,class:'nav-link action_link btn-success btn-sm'  %>
+          </li>
+        <li class="nav-item">
+            <%= link_to 'Sign In' ,registration_login_path,class:'nav-link action_link btn-danger btn-sm' %>
+          </li>
+	<% end %>
+                               
+								<!--<li class="m-0"><a class="btn quote-btn" href="" role="button" style="margin-left: 5px;">BOOK TABLE NOW</a></li>-->
+								<li class="m-0">&nbsp;&nbsp;&nbsp;<%= link_to '<i style="font-size:24px;" class="fa fa-cutlery"></i>'.html_safe,home_view_cart_page_path %></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="top-header">
+        </div>
+        <!-- TOP HEADER END -->
+        
+        <!-- NAV START -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a href="" class="navbar-brand"><%= image_tag ("mainlogo.png"), class: "img-responsive"%></a>
+
+                <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                </button>
+
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        
+                        <li><%=  link_to "Home", home_index_path ,class:'nav-item nav-link' %></li>
+						
+						<li><%=  link_to "Menu", home_menu_path ,class:'nav-item nav-link' %></li>
+						
+						<% if user_signed_in? %>
+                        <li><%=  link_to "My Profile", home_user_profile_path ,class:'nav-item nav-link' %></li>
+<% else %>
+<li>
+     <%= link_to 'Sign In' ,registration_login_path,class:'nav-link action_link nav-item' %>
+     </li>
+<% end %>
+						<li><a href="" class="nav-item nav-link">Table Reservation</a></li>
+                        <!--<li class="dropdown">
+                            <a href="#" class="nav-item nav-link" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">m1</a>
+                                <a href="#" class="dropdown-item">m2</a>
+                                <a href="#" class="dropdown-item">m3</a>
+                                <a href="#" class="dropdown-item">m4</a>
+                            </div>
+                        </li>-->
+                        
+                        <li><a href="" class="nav-item nav-link last-link-item">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- NAV END -->
+		
+		
