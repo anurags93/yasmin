@@ -1,4 +1,4 @@
-# This file is auto-generated from the current state of the database. Instead
+  # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -10,29 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220218063238) do
+ActiveRecord::Schema.define(version: 20220221104006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bill_lines", force: :cascade do |t|
     t.integer  "bill_id"
-    t.integer  "item_id"
-    t.float    "tax_percent"
+    t.integer  "menu_id"
+    t.integer  "tax_percent"
     t.integer  "tax_cents",        default: 0, null: false
     t.integer  "net_amount_cents", default: 0, null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "price_cents",      default: 0, null: false
+    t.integer  "quantity"
     t.index ["bill_id"], name: "index_bill_lines_on_bill_id", using: :btree
   end
 
   create_table "bills", force: :cascade do |t|
     t.integer  "order_summary_id"
-    t.integer  "tax_total"
     t.string   "bill_status"
     t.datetime "date"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "tax_total_cents",  default: 0, null: false
     t.index ["order_summary_id"], name: "index_bills_on_order_summary_id", using: :btree
   end
 

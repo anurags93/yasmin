@@ -1,11 +1,18 @@
 $( document ).ready(function() {
 
 
-	   // $("#cod").click(function(){
+	   $(".payOnl").click(function(){
 	   
-	   // 	  //event.preventDefault();
-	   //    $.post($(this).attr('data-href') + "?address=" + $('input[name="shipaddr"]:checked').val(), function(data){} );
-	   //    alert($('input[name="shipaddr"]:checked').val());
+	   	  if($('input[name="order_address"]:checked').val() != null)
+	   	  {
+           $(".address_form_style").submit();
+	   	  }
+	   	  	else
+	   	  	{
+	   	  		$('#alertmsgModal .iconCls h1').html('Please Select Delivery Address');
+				$('#alertmsgModal').modal('show');
 
-	   //  });
+	   	  	}
+
+	    });
 });

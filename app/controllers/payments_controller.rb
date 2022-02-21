@@ -8,5 +8,6 @@ class PaymentsController < ApplicationController
    @order.user_id=current_user.id
    @order.save
    @order.pending!
+   @order.complete!
 	end
 end

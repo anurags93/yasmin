@@ -11,8 +11,14 @@
 	<% else %>
 		<div class="addType"><span style="background:#333;">Other</span></div>
 	<% end %>
+	<% check_radio = "" 
+			   if @user_addresses.count == 1 
+				  check_radio = "checked"
+				 else 
+				  check_radio = ""
+				 end %>
 	<% if radiobtn %>
-<%= radio_button_tag 'order_address', address.id %>
+<%= radio_button_tag 'order_address', address.id , :checked => check_radio %>
   <% end %>
 		<div class="fullAdd"><%= address.address %></div>
 		<div class="zipPin">Passcode : <%= address.pincode %></div>

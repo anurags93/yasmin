@@ -37,10 +37,10 @@
  <% if user_signed_in? %>
 		<!--<a href="javascript:void(0);" class="payOnl order_submit_btn_cod">Pay £ <span class="order_pay_total"></span></a>-->
 		<% if @address_count == 0 %>
-		<a href="javascript:void(0);">No Saved Address</a>
+		<a href="javascript:void(0);" class="btn btn-sm btn-danger">No Saved Address</a>
 		<% else %>
-		<div><%= submit_tag 'Save' %></div>
-		<%= link_to '<span class="order_pay_total">Cash On Delivery</span>'.html_safe,payments_path,remote:true ,class:'payOnl'%>
+		<div><%= button_tag 'Cash On Delivery',type:'button',class:'payOnl' %></div>
+		
 		<% end %>
      <% else %>
 		<a href="login_register.php" class="payOnl1">Login To Place Order</a>

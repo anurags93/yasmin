@@ -16,7 +16,7 @@ class OrderSummary < ApplicationRecord
     end    
 
     event :complete do 
-      transitions from: :pending, to: :completed, before: :prepare_bill
+      transitions from: :pending, to: :completed, after: :prepare_bill
     end
   end
 
@@ -30,10 +30,25 @@ class OrderSummary < ApplicationRecord
       orderline.quantity=value
       orderline.menu_id=key.to_i
       orderline.save
-	  end
-	 end
 
+	  end
+    
+	 end
+     
+  
    def prepare_bill
-    # code
+     bill = Bill.new
+     bill.order_summary_id = self.id
+         order_lines.each do |item|
+           bill_line = bill.bill_lines.new
+           bill_line.menu_id = item.menu_id
+           bill_line.quantity = item.quantity
+           bill_line.price = bill_line.menu.price
+           bill_line.tax = bill_line.menu.tax
+           bill_line.net_amount = bill_line.menu.net_amount
+           bill_line.tax_percent = bill_line.menu.menu_category.tax.gst
+         end
+     bill.save
+     bill.pending!
    end
 end

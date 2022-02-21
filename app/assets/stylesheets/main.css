@@ -3,10 +3,10 @@
   * Version:  2
   * Date:     29/12/2020
 ===================================================== */
-
+/*
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&amp;display=swap');
 @import url('lib/normalize.css');
-
+*/
 /*==================================================*/
              /* [Table of contents] */
 /*==================================================*/
@@ -543,7 +543,7 @@ h5.subtitle{
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: var(--primary-color) url(../images/icons/cd-top-arrow.svg) no-repeat center 50%;
+  //background: var(--primary-color) url(../images/cd-top-arrow.svg) no-repeat center 50%;
   visibility: hidden;
   border-radius: 3px;
   z-index: 4;
