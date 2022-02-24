@@ -16,6 +16,10 @@ gem 'money-rails', '~>1.12'
 
 gem 'sidekiq'
 
+gem 'stripe'
+
+gem 'figaro'
+
 gem 'racc', '~> 1.4', '>= 1.4.14'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'

@@ -1,10 +1,9 @@
 class OrderSummary < ApplicationRecord
 	has_many :order_lines
   belongs_to :user
+  has_one :bill
 
-
-	include AASM
-
+  include AASM
 
   aasm column: 'order_status' do
     state :initiated, initial: true
@@ -21,24 +20,20 @@ class OrderSummary < ApplicationRecord
   end
 
 	def prepare_order
-
-    order_id="YS"+rand(99..9999).to_s+user.id.to_s+order_address
-
     cart_items=user.cart_array
-    cart_items.each do |key,value|
-      orderline=order_lines.new
-      orderline.quantity=value
-      orderline.menu_id=key.to_i
-      orderline.save
-
-	  end
-    
-	 end
+      cart_items.each do |key,value|
+        orderline=order_lines.new
+        orderline.quantity=value
+        orderline.menu_id=key.to_i
+        orderline.save
+      end
+  end
      
   
    def prepare_bill
      bill = Bill.new
      bill.order_summary_id = self.id
+     bill.payment_mode = self.payment_mode
          order_lines.each do |item|
            bill_line = bill.bill_lines.new
            bill_line.menu_id = item.menu_id
@@ -50,5 +45,7 @@ class OrderSummary < ApplicationRecord
          end
      bill.save
      bill.pending!
+     
+          
    end
 end

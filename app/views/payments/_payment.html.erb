@@ -1,0 +1,62 @@
+
+<div class="row otSecDiv">
+				
+<div class="col-lg-12">
+			<h4 class="topHeadSec">Make Payment</h4><br>
+		</div>
+
+		
+<div class="col-lg-6">
+	<div class="addLayout" style="padding-bottom: 35px;">
+		<h5>Pay Online</h5><hr>
+		<p>Go to Payment Gateway</p>
+<% if @cart_data.size() == 0 %>
+	<a href="index.php" class="payOnl1">Add items</a>
+<% else %>
+    <% if user_signed_in? %>
+		<% if @address_count == 0 %>
+		<a href="javascript:void(0);" class="btn btn-sm btn-danger">No Saved Address</a>
+		<% else %>
+            <div>
+            	<%= submit_tag 'Pay Online',class:'payOnl btn btn-danger btn-sm order_pay_total_online' %>
+            	<%= radio_button_tag 'payment_radio' ,'online',class:'btn btn-danger btn-sm' %>
+			</div>
+		<% end %>
+	<% else %>
+		<%= link_to 'Login To Place Order' ,registration_login_path,class:'payOnl1' %>
+	<% end %>
+<% end %>
+	</div>
+</div>
+
+<div class="col-lg-6">
+
+	<div class="addLayout">
+		<h5>Pay on Delivery</h5><hr>
+		<p>Please Keep Exact Change Handy to Help us Serve you better</p>
+	<% if @cart_data.size() == 0 %>
+		<a href="index.php" class="payOnl1">Add items</a>
+	<% else %>
+		<% if user_signed_in? %>
+		
+			<% if @address_count == 0 %>
+				<a href="javascript:void(0);" class="btn btn-sm btn-danger">No Saved Address</a>
+			<% else %>
+				<div>
+					<%= submit_tag 'Cash On Delivery' ,class:'payOnl btn btn-danger btn-sm order_pay_total_cod' %>
+					<%= radio_button_tag 'payment_radio' ,'cod',class:'btn btn-danger btn-sm' %>
+				</div>
+
+			<% end %>
+		<% else %>
+			<%= link_to 'Login To Place Order' ,registration_login_path,class:'payOnl1' %>
+		<% end %>
+	<% end %>
+	</div>
+
+</div>
+
+	
+			
+				
+				</div>

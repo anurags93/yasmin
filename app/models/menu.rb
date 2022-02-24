@@ -39,7 +39,7 @@ class Menu < ApplicationRecord
 
 
       def update_rates
-        tax,net_amount=calculate_tax_and_amount
+        tax,net_amount = calculate_tax_and_amount
         self.update_column(:tax_cents, tax*100)
         self.update_column(:net_amount_cents, net_amount*100)
       end

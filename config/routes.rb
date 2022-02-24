@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get  'home/index'
   get  'home/menu'
   get  'home/view_cart_page'
-  get  'home/checkout'
+  get  'checkout/checkout'
   get  'home/user_profile'
   
   post 'pincodes/check_pincode'
@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   resources :menus
   resources :user_addresses, only: [:create, :destroy]
   resources :cart ,only: [:update ,:destroy]
-  resources :payments ,only: [:create]
+  resources :payments ,only: [:new , :create, :show]
+  resources :checkout ,only: [:create]
 end

@@ -1,0 +1,2 @@
+class TaxLine < ApplicationRecord
+end

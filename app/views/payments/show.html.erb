@@ -1,0 +1,39 @@
+<div class="pages-hero" style="background-image:url(<%= asset_path 'backaboutimg.png' %>);">
+        <div class="container-fluid">
+            <div class="pages-title">
+              
+            </div>
+        </div>  
+    </div>
+<section>
+<div class="container" align = "center">
+  <div class="row">
+
+<%= form_tag payments_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <br><br>
+    <%= hidden_field_tag 'payment_id', @payment.id %> 
+   
+    <label class="amount">
+      <span>Amount: <%= humanized_money_with_symbol @bill.price_total  %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>"
+          data-description="Yasmin Restaurants"
+         
+          data-amount="<%= @bill.price_total_cents %>"
+          data-currency="GBP"
+          data-locale="auto"></script>
+          <br><br>
+<% end %>
+
+  </div>
+</div>
+</section>

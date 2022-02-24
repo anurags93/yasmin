@@ -1,10 +1,17 @@
 class Bill < ApplicationRecord
 	has_many :bill_lines
 	belongs_to :order_summary
+	has_many :payments
     
+    monetize :price_total_cents
+	monetize :tax_total_cents
+	monetize :net_amount_total_cents
+
+	
+
 	include AASM
 
-
+    
 	aasm column: 'bill_status' do
 		state :initiated, initial: true
 		state :pending 
@@ -19,11 +26,12 @@ class Bill < ApplicationRecord
 		end
 	end
 
+ 
 
-
-
-
-   def prepare_payment
-
+   def prepare_payment 
+	payment = payments.new
+	payment.order_summary_id = order_summary.id
+	payment.payment_mode = payment_mode
+	payment.save
    end
 end
