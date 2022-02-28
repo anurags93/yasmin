@@ -7,7 +7,7 @@ class BillLine < ApplicationRecord
 	monetize :net_amount_cents
 
 
-	after_save :update_rates, :update_bill_total
+	after_save :update_rates, :update_bill_total , :update_tax_lines
 
 	def update_rates
 		tax,net_amount,price = calculate_tax_and_amount_and_price
@@ -29,5 +29,17 @@ class BillLine < ApplicationRecord
 		price = menu.price_cents
 		net_amount = price-tax
 		return tax,net_amount,price
+    end
+    
+    def update_tax_lines
+    	
+    	tax_line = TaxLine.new
+    	tax_line.tax_id = self.menu.menu_category.tax_id
+    	tax_line.bill_id = self.bill_id
+    	tax_line.tax_percent = self.tax_percent
+    	tax_line.cgst_percent = self.menu.menu_category.tax.cgst
+    	tax_line.sgst_percent = self.menu.menu_category.tax.sgst
+    	tax_line.save
+    	#binding.pry
     end
 end

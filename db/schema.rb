@@ -144,7 +144,7 @@ ActiveRecord::Schema.define(version: 20220224093900) do
     t.integer  "bill_id"
     t.integer  "tax_percent"
     t.float    "cgst_percent"
-    t.integer  "sgst_percent"
+    t.float    "sgst_percent"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["bill_id"], name: "index_tax_lines_on_bill_id", using: :btree

@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
 
   def create
     payment = Payment.find params[:payment_id]
-
+    @bill = payment.bill_id
     @amount = payment.bill.price_total.to_i
     customer = Stripe::Customer.create(
     email: params[:stripeEmail],
@@ -31,7 +31,7 @@ class PaymentsController < ApplicationController
     payment.response = charge
     payment.save
     payment.complete!
-
+    BillMailer.with(bill: @bill).new_bill_email.deliver_later
     render :template => 'payments/thankyou'
     rescue Stripe::CardError => e
       flash[:error] = e.message

@@ -22,9 +22,9 @@ class OrderSummary < ApplicationRecord
 	def prepare_order
     cart_items=user.cart_array
       cart_items.each do |key,value|
-        orderline=order_lines.new
-        orderline.quantity=value
-        orderline.menu_id=key.to_i
+        orderline = order_lines.new
+        orderline.quantity = value
+        orderline.menu_id = key.to_i
         orderline.save
       end
   end
@@ -45,6 +45,7 @@ class OrderSummary < ApplicationRecord
          end
      bill.save
      bill.pending!
+
      
           
    end

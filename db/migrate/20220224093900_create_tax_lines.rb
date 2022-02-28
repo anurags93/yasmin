@@ -5,7 +5,7 @@ class CreateTaxLines < ActiveRecord::Migration[5.0]
       t.belongs_to :bill
       t.integer :tax_percent
       t.float :cgst_percent
-      t.integer :sgst_percent
+      t.float :sgst_percent
       t.timestamps
     end
   end
