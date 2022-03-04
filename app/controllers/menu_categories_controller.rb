@@ -1,5 +1,5 @@
 class MenuCategoriesController < ApplicationController
-
+  load_and_authorize_resource
   layout 'dashboard'
   def index
    @menu_category = MenuCategory.all.order(:id)

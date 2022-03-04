@@ -22,10 +22,15 @@
     </div>
    
      <div class="form-outline mb-4">
-      <%= f.label :Role %><br />
-    <%= f.select :role, options_for_select([['Admin','admin'], ['User','user']] , selected: resource.role || resource.role) ,class:'form-control'%>
+      <%= f.label :Type %><br />
+    <%= f.select :type , options_for_select([['Seller','Seller'], ['Customer','Customer']] , selected: resource.type || resource.type),class:'form-control' %>
   </div>
 <br>
+<div class="form-outline mb-4 ">
+      <%= f.label :Role %><br />
+    <%= f.select :role, options_for_select([['Admin','admin'], ['Manager','manager']] , selected: resource.role || resource.role) ,class:'form-control'%>
+  </div>
+  <br>
   <div class="actions">
     <%= f.submit "Sign up" ,class:'btn btn-lg btn-block btn-primary' %>
   </div><br>

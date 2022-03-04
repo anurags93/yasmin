@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   # skip_before_filter :verify_authenticity_token, only: :addcart
  
   def index
-   
+    
   end
    
   def user_profile

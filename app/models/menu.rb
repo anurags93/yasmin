@@ -1,13 +1,15 @@
 class Menu < ApplicationRecord
-	 belongs_to :parent, :class_name => 'Menu', optional: true
+	   belongs_to :parent, :class_name => 'Menu', optional: true
      has_many :children, :class_name => 'Menu', :foreign_key => 'parent_id'
      belongs_to :menu_category
-      
+     has_many :images, as: :imagable
+     accepts_nested_attributes_for :images
+
      validates :name, presence: true  
      validates :price, presence: true
      monetize :price_cents
      monetize :tax_cents
-     monetize :net_amount_cents 
+     monetize :net_amount_cents
 
      WillPaginate.per_page = 15
 

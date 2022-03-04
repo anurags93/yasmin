@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   
   resources :menu_categories
   resources :menus
+  resources :report , only: [:index]
+  resources :images, only: [:new, :create]
   resources :user_addresses, only: [:create, :destroy]
   resources :cart ,only: [:update ,:destroy]
   resources :payments ,only: [:new , :create, :show]

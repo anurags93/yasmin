@@ -1,7 +1,7 @@
  <nav class="navbar navbar-inverse" style='margin-bottom: 0px;position: inherit;'>
-  <div class="container-fluid">
+  <div class="container-fluid" style="display:block;">
     <div class="navbar-header">
-      <a class="navbar-brand" href="javascript:void(0);">Yasmin Admin</a>
+      <a class="navbar-brand" href="javascript:void(0);" style="line-height: 50px;">Yasmin Admin</a>
     </div>
     <ul class="nav navbar-nav" style='float: right;'>
      
@@ -9,8 +9,9 @@
           <li class="nav-item" >
              <button class="btn btn-danger navbar-btn">  <%= link_to 'Sign Out' ,destroy_user_session_path,method: :delete,class:'nav-link ' %>
               </button>
+               Hello ! <%= current_user.email %>
             </li>
-          
+
       <% else %>
           <li class="nav-item">
             <%= link_to 'Sign Up' ,new_user_registration_path,class:'nav-link action_link'  %>

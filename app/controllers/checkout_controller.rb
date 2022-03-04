@@ -9,7 +9,7 @@ class CheckoutController < ApplicationController
 		@order.payment_mode = params[:payment_radio]
 		@order.save
 		@order.pending!
-		@user = User.find(current_user.id)
+		@user = Customer.find(current_user.id)
 		@user_address = UserAddress.find(params[:order_address])
 		@order.complete!
 		empty_cart_array(current_user.id)
@@ -25,7 +25,7 @@ class CheckoutController < ApplicationController
    
 	    @user_addresses = UserAddress.where(user_id: current_user.id)
 	    @address_count = UserAddress.where(user_id: current_user.id).count
-			@menu=Menu.new
+			@menu = Menu.new
 			@distinct_menu = Menu.all
 			@cart_data = current_user.cart_array
 			@item_total = 0
@@ -43,7 +43,7 @@ class CheckoutController < ApplicationController
   end
 
   def empty_cart_array(user_id)
-  	@user = User.find(user_id)
+  	@user = Customer.find(user_id)
   	@user.cart_array = {}
   	@user.save
   end

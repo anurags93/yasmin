@@ -3,8 +3,8 @@ class CartController < ApplicationController
 	def destroy
     current_user.cart_array.delete(params[:id].to_s)
     if current_user.save
-    	 @cart_data=current_user.cart_array
-    	 @distinct_menu=Menu.all
+    	 @cart_data = current_user.cart_array
+    	 @distinct_menu = Menu.all
     end
   end
 

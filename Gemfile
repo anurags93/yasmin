@@ -17,8 +17,16 @@ gem 'money-rails', '~>1.12'
 gem 'sidekiq'
 
 gem 'stripe'
-
 gem 'figaro'
+
+gem 'cancancan'
+
+#for s3
+gem 'carrierwave-aws'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
+
 
 gem 'racc', '~> 1.4', '>= 1.4.14'
 # Use Puma as the app server

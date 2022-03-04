@@ -1,4 +1,5 @@
 class UserAddressesController < ApplicationController
+  load_and_authorize_resource
 def destroy
      @user_address=UserAddress.find(params[:id])
      @user_address.destroy

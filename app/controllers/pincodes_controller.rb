@@ -1,4 +1,5 @@
 class PincodesController < ApplicationController
+  load_and_authorize_resource
 def check_pincode
     
     if Pincode.where(pincode: params[:address_zip].to_s).count !=0

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220224093900) do
+ActiveRecord::Schema.define(version: 20220302120609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,17 +50,15 @@ ActiveRecord::Schema.define(version: 20220224093900) do
     t.index ["user_id"], name: "index_cart_items_on_user_id", using: :btree
   end
 
-  create_table "customers", force: :cascade do |t|
+  create_table "images", force: :cascade do |t|
+    t.integer  "imagable_id"
+    t.string   "imagable_type"
     t.string   "name"
-    t.string   "email"
-    t.string   "contact"
-    t.string   "password"
-    t.string   "address"
-    t.integer  "pincode"
-    t.string   "gender"
-    t.string   "dob"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.string   "image_url"
+    t.string   "image"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "menu_categories", force: :cascade do |t|
@@ -185,6 +183,7 @@ ActiveRecord::Schema.define(version: 20220224093900) do
     t.string   "pincode"
     t.jsonb    "cart_array",             default: {}
     t.string   "name"
+    t.string   "type"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
