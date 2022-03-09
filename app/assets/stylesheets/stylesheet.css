@@ -1113,7 +1113,7 @@ ul.social-links li a:hover {
     background: none;
     border: none;
     z-index: 100;
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255 ,0.5);
     border-radius: 0px;
     padding: 4px 5px;
     transition: 0.4s;
@@ -1126,7 +1126,7 @@ ul.social-links li a:hover {
 }
 .basic-carousel .owl-theme .custom-nav .owl-prev:hover,
 .basic-carousel .owl-theme .custom-nav .owl-next:hover {
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255 ,0.5);
 }
 .basic-carousel .owl-theme .custom-nav .owl-prev i,
 .basic-carousel .owl-theme .custom-nav .owl-next i {
