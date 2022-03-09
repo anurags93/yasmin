@@ -11,7 +11,7 @@ class Menu < ApplicationRecord
      monetize :tax_cents
      monetize :net_amount_cents
 
-     WillPaginate.per_page = 15
+     #WillPaginate.per_page = 15
 
      after_save :update_rates
      

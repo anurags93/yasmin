@@ -10,7 +10,7 @@ gem 'pry'
 
 gem 'devise', '~> 4.8'
 
-gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+#gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 gem 'money-rails', '~>1.12'
 
